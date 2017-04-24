@@ -1,125 +1,107 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE>
 <html>
-  <head>
-    <title>计算器</title>
-    <meta charset="utf-8" />
-    <style type="text/css">
-      .panel {
-        border: 4px solid #ddd;
-        width: 192px;
-        margin: 100px auto;
-        /*border-radius: 6px;*/
-      }
-      .panel p, .panel input {
-        font-family: "微软雅黑";
-        font-size: 20px;
-        margin: 4px;
-        float: left;
-        /*border-radius: 4px;*/
-      }
-      .panel p {
-        width: 122px;
-        height: 26px;
-        border: 1px solid #ddd;
-        padding: 6px;
-        overflow: hidden;
-      }
-      .panel input {
-        width: 40px;
-        height: 40px;
-        border:1px solid #ddd;
-      }
-    </style>
-    <script>
-    	function $(id){
-    		return document.getElementById(id);
-    	}
-    	window.onload=function(){
-    		var panel=$("panel");
-    		//console.log(panel);
-    		panel.onclick=clickAction;
-    	};
-    	function clickAction(event){
-    		//console.log(event);
-    		//获取事件源
-    		var obj=event.target||event.srcElement;
-    		
-    		if(obj.nodeName!="INPUT"){
-    			return;
-    		}
-    		//console.log(obj);
-    		var str=obj.value;
-    		console.log(str);
-    		var screen=$("screen");
-    		
-    		
-    		console.log(screen);
-    		if(str=="C"){
-    			screen.innerHTML=0;
-    			return;
-    		}
-    		if(str=="="){
-    			try{
-    			var val=eval("("+screen.innerHTML+")");
-    			screen.innerHTML=val;
-    			}catch(e){
-    				screen.innerHTML="E";
-    			}
-    			return;
-    		}
-    		if(str=="0"){
-    			var num=parseFloat(screen.innerHTML);
-    			if(num==0){
-    				screen.innerHTML=0;
-    				return;
-    			}
-    		}
-    		
-    		if(screen.innerHTML=="0"){
-    			if(str!="."){
-    			screen.innerHTML="";
-    		}
-    		}
-    		screen.innerHTML+=str;
-    	}
-    	
-    </script>
-    <style>
-    	#screen{
-    		text-align:right;
-    	}
-    </style>
-  </head>
-  <body>
-    <div id="panel" class="panel">
-      <div>
-        <p id="screen">0</p>
-        <input type="button" value="C">
-        <div style="clear:both"></div>
-      </div>
-      <div>
-        <input type="button" value="7">
-        <input type="button" value="8">
-        <input type="button" value="9">
-        <input type="button" value="/">
-        
-        <input type="button" value="4">
-        <input type="button" value="5">
-        <input type="button" value="6">
-        <input type="button" value="*">
-        
-        <input type="button" value="1">
-        <input type="button" value="2">
-        <input type="button" value="3">
-        <input type="button" value="-">
-        
-        <input type="button" value="0">
-        <input type="button" value=".">
-        <input type="button" value="=">
-        <input type="button" value="+">
-        
-        <div style="clear:both"></div>
-      </div>
-    </div>    
+<head>
+<meta charset="UTF-8">
+		
+<title>更多资讯</title>
+	<link rel="stylesheet" href="css/common.css" />
+	<link rel="stylesheet" href="css/frontPage.css" />
+	<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+	<style type="text/css">
+			.address{
+				height: 75px;
+    			width: 100%;
+			    background-color: white;
+			    padding: 10px 0;
+			    overflow: hidden;
+			}
+			.service {
+			    width: 25%;
+			    display: inline-block;
+			    float: left;
+			    text-align: center;
+			}
+			.address a{
+				text-decoration: none;
+    			color: inherit;
+			}
+			.address a{
+				width:50px;
+			}
+			.share{
+				height:20%;
+				width:100%;
+				position:absolute;
+				bottom:-20%;
+				font-size:14px;
+				background: #fff;
+				
+			}
+			.address img{
+				width:50px;
+				margin: 0 auto;
+			}
+			.address a div{
+				font-size: 14px;
+			    padding-top: 5px;
+			    margin-top: 10px;
+			}
+			#shareTo{
+				text-align: center;
+   				border-bottom: 1px solid #dedede;
+   				line-height:30px;
+			}
+		</style>
+
+ </head>
+<body>
+		<div class="page_head">
+			
+			推荐邀请
+			<button id="submit_btn_small" type="button" onclick > 分享</button>
+		</div>
+		<div class="mask" style="height:100%">
+			
+		</div>
+		<div class="share">
+			<div id="shareTo" >分享到</div>
+			<div class="address">
+				<div class="service">
+					<a>
+						<img src="images/jtqy/ico_login_weixin.png"/>
+					</a>
+					<div>微信</div>
+				</div>
+				<div class="service">
+					<a>
+						<img src="images/jtqy/ico_login_invitation.png"/>
+					</a>
+					<div>朋友圈</div>
+				</div>
+				<div class="service">
+					<a>
+						<img src="images/jtqy/ico_login_qq.png"/>
+					</a>
+					<div>QQ好友</div>
+				</div>
+				<div class="service">
+					<a>
+						<img src="images/jtqy/ico_login_weibo.png"/>
+					</a>
+					<div>微博</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			$("#submit_btn_small").click(function(){
+				$(".mask").show();
+				$(".share").animate({bottom:"0"});
+			})
+			$('.mask').click(function(){
+				$(".mask").hide();
+				$(".share").animate({bottom:"-20%"});
+			})
+		</script>
   </body>
 </html>
