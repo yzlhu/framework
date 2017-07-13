@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表格</title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="js/My97DatePicker/skin/WdatePicker.css" />
+		<link rel="stylesheet" href="js/datatables/css/jquery.dataTables.min.css" />
+	</head>
+	<body>
+		<div class="main">
+			<form id="form">
+				<div class="radius" id="rad">
+					<div id="condition">
+						<span style="margin-left: 5px;">注册时间：</span>
+						<input id="start" name="map.beginDate" class="Wdate" type="text"  onFocus="WdatePicker({maxDate:'#F{$dp.$D(\'end\')}'})" oninput="change(this)"/>-<input id="end" name="map.endDate" class="Wdate" type="text"  onFocus="WdatePicker({minDate:'#F{$dp.$D(\'start\')}'})" oninput="change(this)"/>
+						<span style="margin-left: 5px;">手机号：</span>
+						<input type="text" />
+						<button>查询</button>
+						<button>导出此时段的数据</button>
+
+					</div>
+				</div>
+			</form>
+		
+		<div class="tb">
+				<table class="table table-border table-bordered table-bg table-hover" cellspacing="0" width="100%" id="showTable">
+					<thead>
+						<tr class="text-c" style="max-height: 40px;">
+							<th style="word-break: keep-all;white-space:nowrap;">序号</th>
+			   				<th style="word-break: keep-all;white-space:nowrap;">用户号</th>
+			   				<th style="word-break: keep-all;white-space:nowrap;">手机号</th>
+			   				<th style="word-break: keep-all;white-space:nowrap;">注册时间</th>
+						</tr>
+					</thead>
+					<tbody id="tbody">
+						
+					</tbody>
+				</table>
+				<div style="display: none">
+						<!-- 隐藏DIV 做详情弹框数据读取 -->
+						<input type="hidden" id="currPage" value="" />
+					</div>
+				<div id="pg" >
+					<div class="l f-12">
+						<span>显示<strong id="begin">0</strong>到<strong id = "ending">0</strong>条，共<strong id = "count">0</strong>条</span>
+					</div>
+					<div id="page" class="r"></div>
+			
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery.js" ></script>
+	<script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+	<script type="text/javascript" src="js/datatables/js/jquery.dataTables.min.js" ></script>
+	<script type="text/javascript" src="js/public.js" ></script>
+	<script>
+		$(function(){
+			var iframe = $(window).height();
+	  	    var main = $("#form").height();
+	  	    var pg=$("#pg").height();
+	      	var ht = iframe-main-pg-80;
+	      	var html="";
+	      	pages(19,1);
+	      	for(var i=0;i<20;i++){
+	      	html+='<tr><td class="text-c">'+i+'</td><td class="text-c">u0000'+i+'</td><td class="text-c">18870237337</td><td class="text-c">2017-07-13 09:12:13</td></tr>';
+	      	}
+	      	tablePublic(ht,html);
+		})
+		
+	</script>
+</html>

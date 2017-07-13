@@ -1,0 +1,127 @@
+*{
+	margin:0;
+	padding:0;
+	word-wrap: break-word;
+}
+body{
+	font-family: "Microsoft Yahei","Hiragino Sans GB","Helvetica Neue",Helvetica,tahoma,arial,"WenQuanYi Micro Hei",Verdana,sans-serif,"\5B8B\4F53";
+	font-size: 14px;
+	position: relative;
+	background-color: #fff;
+	min-height: 100%;
+	color:#333;
+	min-width: 850px;
+}
+html,body{
+	height: 100%;
+}
+ul{
+	list-style: none;
+}
+.main{
+	background-color: #EFF3F6;
+    min-height: 98%;
+    padding-top: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.radius{
+	background-color: #FFFFFF;
+    width: 100%;
+    height: 40px;
+    font-size: 12px;
+    border-left: 2px solid #E6EAED;
+    border-bottom: 2px solid #E7ECF0;
+}
+#condition{
+
+    line-height: 30px;
+    padding-top: 5px;
+    width: 100%;
+}
+#condition input{
+	width: 10%; 
+	height: 25px; 
+	font-size: 12px; 
+	border: 1px solid #DEDEDE;
+}
+#condition button{
+	height: 26px;
+    background-color: #5eb95e;
+    border: none;
+    color: #fff;
+    padding: 0 5px;
+    position: relative;
+    top: 1px;
+    border-radius: 5px;
+    cursor:pointer;
+    margin-left: 5px;
+}
+#condition button:hover{
+	color:#fff;
+	background-color: #429842;
+}
+#condition select{
+    width: 12%;
+    height: 27px;
+    font-size: 12px;
+    border: 1px solid #DEDEDE;
+    position: relative;
+    top: 1px;
+}
+.tb{
+	overflow: hidden;
+	margin-top:10px;
+}
+.text-c{
+	text-align: center;
+}
+.table-border th{
+	border-top:1px solid #ddd;
+	background-color: #f5fafe;
+}
+.table-border th,.table-border td{
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;;
+}
+#pg{
+	margin-top: 10px;
+    height: 35px;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 98%;
+    line-height: 35px;
+}
+#div button{
+	margin-top: 10px;
+    height: 25px;
+    color: #fff;
+    background-color: #5a98de;
+    border: none;
+    padding: 0 8px;
+    border-radius: 5px;
+}
+#div button:hover{
+	color:#fff;
+	background-color:#06c;
+}
+#condition a{
+	    display: inline-block;
+    background: #ccc;
+    height: 20px;
+    line-height: 20px;
+    color: black;
+    padding: 0 6px;
+    border-radius: 4px;
+    cursor:pointer;
+    text-decoration: none;
+}
+#condition a.selected{
+	color:#fff;
+	background-color:#31BCE7;
+}
+#condition a:hover{
+	color:#fff;
+	background-color:#ABDBE6;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表格</title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="js/My97DatePicker/skin/WdatePicker.css" />
+		<link rel="stylesheet" href="js/datatables/css/jquery.dataTables.min.css" />
+	</head>
+	<body>
+		<div class="main">
+			<form id="form">
+				<div class="radius" id="rad">
+					<div id="condition">
+						<span style="margin-left: 5px;">95折活动名称：</span>
+						<select><option selected="selected">新用户95体验购卡</option></select>
+						<span style="margin-left: 5px;">大转盘及其他活动名称：</span>
+						<select><option selected="selected">缴费充值大转盘</option></select>
+						<span style="margin-left:50px">月份：</span>
+						<input id="start" class="Wdate" type="text"  onfocus="WdatePicker({dateFmt:'yyyy年MM月'})" oninput="change(this)"/>
+						<button>查询</button>
+						
+
+					</div>
+				</div>
+			</form>
+		
+		<div class="tb">
+				<table class="table table-border table-bordered table-bg table-hover" cellspacing="0" width="100%" id="showTable">
+					<thead>
+						<tr class="text-c" style="max-height: 40px;">
+							<th style="word-break: keep-all;white-space:nowrap;">项目</th>
+			   				<th style="word-break: keep-all;white-space:nowrap;">新用户注册数</th>
+			   				<th style="word-break: keep-all;white-space:nowrap;">新用户注册缴费数</th>
+						</tr>
+					</thead>
+					<tbody id="tbody">
+						
+					</tbody>
+				</table>
+				<div style="display: none">
+						<!-- 隐藏DIV 做详情弹框数据读取 -->
+						<input type="hidden" id="currPage" value="" />
+					</div>
+				<div id="pg" >
+					<div class="l f-12">
+						<span>显示<strong id="begin">0</strong>到<strong id = "ending">3</strong>条，共<strong id = "count">3</strong>条</span>
+					</div>
+					<div id="page" class="r"></div>
+			
+		</div>
+	</body>
+ 	<script type="text/javascript" src="js/jquery.js" ></script>
+	<script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+	<script type="text/javascript" src="js/datatables/js/jquery.dataTables.min.js" ></script>
+	<script type="text/javascript" src="js/public.js" ></script>
+	<script>
+		$(function(){
+			var iframe = $(window).height();
+	  	    var main = $("#form").height();
+	  	    var pg=$("#pg").height();
+	      	var ht = iframe-main-pg-80;
+	      	var html="";
+	      	pages(3,1);
+	      	html='<tr><td class="text-c">95折活动</td><td class="text-c">0</td><td class="text-c">0</td></tr>'+
+		      	'<tr><td class="text-c">大转盘及其他活动</td><td class="text-c">0</td><td class="text-c">0</td></tr>'+
+		      	'<tr><td class="text-c">合计</td><td class="text-c">0</td><td class="text-c">0</td></tr>';
+	      	
+	      	tablePublic(ht,html);
+		})
+	
+
+	</script>
+</html>

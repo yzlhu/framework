@@ -1,5 +1,3 @@
-tuzibenyue
+﻿基本架构还在搭建中
 ==========
-玉兔吃月饼小游戏  
-原生canvas实现  
-在线demo：[http://idoube.com/proj/tuzibenyue/](http://idoube.com/proj/tuzibenyue/)
+不懂可以加我扣扣：741092075
